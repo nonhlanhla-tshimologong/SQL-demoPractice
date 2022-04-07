@@ -1,5 +1,7 @@
 USE Northwind
 
+--string manipulation
+
 SELECT * FROM EmployeesExtraCharacters
 
 SELECT FirstName, LastName, LTRIM(FirstName), LTRIM(FirstName) FROM EmployeesUppercase
@@ -72,10 +74,17 @@ SELECT
 
 --Characters
 
-DECLARE @str AS VARCHAR(100)
+DECLARE @str1 AS VARCHAR(100)
+DECLARE @str AS VARCHAR(MAX)
+DECLARE @startPosition AS INT
+DECLARE @pos AS INT
 
 SET @str = '** . **.NA&&&NCY.**** _  '
 PRINT @str
 
 SET @str = TRIM('* . 0 _' FROM @str)
 PRINT @str
+
+SET @str = '-  _()  1234***()o%%%^''con|{}|nor lis-a____N\ne janet li._'
+
+SET @str = TRIM('- () _ .' FROM LOWER(@str))
