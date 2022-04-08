@@ -1,3 +1,5 @@
+USE master
+
 SELECT GETDATE()
 
 SELECT CAST(GETDATE() AS varchar)
@@ -24,3 +26,30 @@ SELECT
     TRY_CAST(GETDATE() AS image),
      TRY_CONVERT(image, GETDATE())*/
 
+--DATE FORMAT
+
+SELECT GETDATE()
+
+DECLARE @num AS INT
+SET @num = 012345678
+
+SELECT 
+      CASE WHEN LEN(@num) = 9 THEN 
+	       FORMAT(@num, '###-##-####')
+	  ELSE
+	       'formatting not supported'
+	  END
+
+SELECT 
+      CASE WHEN LEN(@num) = 9 THEN   
+	       FORMAT(@num, '###-##-####')
+	  ELSE
+	       CONCAT(0,FORMAT(@num, '##-##-####'))
+      END
+SELECT FORMAT(8015551212, '(###) ###-####')
+
+--SELECT OrderId,
+--       CASE WHEN OrderDate IS NULL THEN 'no order date'
+--	   ELSE 
+--	   CONVERT(VARCHAR,OrderDate,101) 
+--	   END AS Orderdate

@@ -82,9 +82,24 @@ DECLARE @pos AS INT
 SET @str = '** . **.NA&&&NCY.**** _  '
 PRINT @str
 
-SET @str = TRIM('* . 0 _' FROM @str)
+--SET @str = TRIM('* . 0 _' FROM @str)
 PRINT @str
 
 SET @str = '-  _()  1234***()o%%%^''con|{}|nor lis-a____N\ne janet li._'
+PRINT @str
 
-SET @str = TRIM('- () _ .' FROM LOWER(@str))
+--SET @str = TRIM('- () _ .' FROM LOWER(@str))
+
+--CASE STATEMENTS
+
+SELECT 
+      CASE WHEN 1 = 5 THEN '1 EQUALS 5'
+	      ELSE
+          '1 DOES NOT EQUAL 5'
+	  END AS result
+
+SELECT 
+      CASE WHEN 1 > 0 THEN '1 Is greater than 0'
+	       WHEN 1 = 1 THEN '1 equals 1'
+	  END AS RESULT
+
